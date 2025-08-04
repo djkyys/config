@@ -1,0 +1,6 @@
+command=/opt/homebrew/bin/tmux
+title = " "
+
+theme = vesper
+font-family = "SFMono Nerd Font"
+font-size = 14
