@@ -1,0 +1,74 @@
+after-startup-command = []
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 0 
+
+default-root-container-layout = 'accordion'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+    preset = 'qwerty'
+
+[gaps]
+    inner.horizontal = 0
+    inner.vertical =   0
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
+
+[mode.main.binding]
+ctrl-space = ['mode alt']
+
+[mode.alt.binding]
+ctrl-space = ['mode main']
+ctrl-c = ['mode main']
+esc = ['mode main']
+
+slash = 'layout tiles horizontal vertical'
+comma = 'layout accordion horizontal vertical'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#focus
+h = ['focus --boundaries-action stop left', 'move-mouse window-force-center']
+j = ['focus --boundaries-action stop down', 'move-mouse window-force-center']
+k = ['focus --boundaries-action stop up', 'move-mouse window-force-center']
+l = ['focus --boundaries-action stop right', 'move-mouse window-force-center']
+
+c = ['move-mouse window-force-center']
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
+shift-h = 'move left'
+shift-j = 'move down'
+shift-k = 'move up'
+shift-l = 'move right'
+
+minus = 'resize smart -64'
+equal = 'resize smart +64'
+shift-minus = 'resize smart -128'
+shift-equal = 'resize smart +128'
+
+b = 'workspace prev'
+f = 'workspace next'
+
+shift-b = 'move-node-to-workspace prev'
+shift-f = 'move-node-to-workspace next'
+
+1 = 'workspace 1'
+2 = 'workspace 2'
+3 = 'workspace 3'
+
+shift-1 = 'move-node-to-workspace 1'
+shift-2 = 'move-node-to-workspace 2'
+shift-3 = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout tiling",
+]
